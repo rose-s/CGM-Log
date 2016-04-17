@@ -1,1 +1,72 @@
 /* CSS declarations go here */
+h1 {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background: white;
+
+}
+
+li {
+	 width: 1002px;
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+  overflow: hidden;
+}
+
+#date {
+	float: left; 
+	width:8%; 
+	margin: 0 auto;
+  	overflow: auto;
+
+}
+
+#day {
+	float: left; 
+	width:5%; 
+	  margin: 0 auto;
+  overflow: auto;
+}
+
+#time {
+	float: left; 
+	width:10%; 
+	  margin: 0 auto;
+  overflow: auto;
+ 
+
+}
+
+#body {
+	float:left; 
+	width:75%; 
+	  margin: 0 auto;
+  overflow: auto;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
