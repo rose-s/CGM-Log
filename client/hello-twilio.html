@@ -11,20 +11,27 @@
 
 
 <template name="smsLog">
+
   <h1>Charlie's Log</h1>
-<ul>
-    {{#each sms}}
-      <li class="editmode">
-        {{#if isIncoming}}
-      <label id="day">{{formatDay date_sent}}</label>
-      <label id="date">{{formatDate date_sent}}</label>
-      <label id="time">{{formatTime date_sent}}</label>
-      <label id="body">{{body}}</label>  
-      <button class="edit">Edit</button>
-      <button class="delete">Delete</button>
-        
-        {{/if}}
-      </li>
-    {{/each}}
-  </ul>
+    <div class="container">
+    <p>
+        <label for="new-task">Add Item</label><input id="new-task" type="text"><button>Add</button>
+      </p>
+      
+     <ul>
+      {{#each sms}}
+        <li class="editmode">
+          {{#if isIncoming}}
+        <label id="day">{{formatDay date_sent}}</label>
+        <label id="date">{{formatDate date_sent}}</label>
+        <label id="time">{{formatTime date_sent}}</label>
+        <label id="body">{{body}}</label>  
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+          
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
