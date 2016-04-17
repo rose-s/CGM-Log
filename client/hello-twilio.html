@@ -14,14 +14,15 @@
   <h1>Charlie's Log</h1>
 <ul>
     {{#each sms}}
-      <li>
+      <li class="editmode">
         {{#if isIncoming}}
-              <input type="checkbox">
-
-      <div id="day">{{formatDay date_sent}}</div>
-      <div id="date">{{formatDate date_sent}}</div>
-      <div id="time">{{formatTime date_sent}}</div>
-      <div id="body">{{body}}</div>  
+      <label id="day">{{formatDay date_sent}}</label>
+      <label id="date">{{formatDate date_sent}}</label>
+      <label id="time">{{formatTime date_sent}}</label>
+      <label id="body">{{body}}</label>  
+      <button class="edit">Edit</button>
+      <button class="delete">Delete</button>
+        
         {{/if}}
       </li>
     {{/each}}
