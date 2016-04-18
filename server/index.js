@@ -9,6 +9,25 @@ var twilioClient = new Twilio({
 });
 var getTwilioMessages = Meteor.wrapAsync(twilioClient.client.messages.list, twilioClient.client.messages);
 
+Meteor.methods({
+  'sendSMS': function (opts) {
+    console.log("Attempting to send message with options", opts);
+    try {
+      var result = twilioClient.sendSMS({
+        to: opts.to,
+        body: opts.message
+      });
+    } catch (err) {
+      throw new Meteor.error(err);      
+    }
+    result.type = "outgoing";
+    var smsId = SMS.insert(result);
+    result._id = smsId;
+    console.log("New message sent:", result);
+    return result;
+  }
+});
+
 
 function updateMessages () {
   getTwilioMessages(function (err, data) {
