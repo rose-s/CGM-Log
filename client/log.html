@@ -1,0 +1,33 @@
+<head>
+    <meta charset="utf-8">
+    <title>CGM Log</title>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container" >
+        <h3>Charlie's Log</h3>
+
+  {{> smsLog}}
+    </div>
+
+</body>
+
+
+<template name="smsLog">
+
+     <ul>
+      {{#each sms}}
+        <li>
+          {{#if isIncoming}}
+        <label id="date">{{formatDate date_sent}}</label>
+        <label id="day">{{formatDay date_sent}}</label>
+        <label id="time">{{formatTime date_sent}}</label>
+        <label id="body">{{body}}</label>  
+    
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+</template>
